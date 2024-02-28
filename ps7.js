@@ -44,6 +44,15 @@ function change2() {
 
 }
 
+function check(id) {
+    let value = confirm("Want us to stop background color to change?");
+    if (value){
+        clearInterval(id);
+    }
+}
+
 window.setInterval(checking, 1000);
-window.setInterval(change1, 1000);
+let timerID = window.setInterval(change1, 1000);
 window.setInterval(change2, 1000);
+
+window.setTimeout(check, 6000, timerID);
